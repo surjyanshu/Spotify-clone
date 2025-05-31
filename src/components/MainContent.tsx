@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Play, MoreHorizontal } from 'lucide-react';
 
@@ -16,12 +15,12 @@ const MainContent = ({ setCurrentSong, setIsPlaying }: MainContentProps) => {
   });
 
   const recentlyPlayed = [
-    { id: 1, title: 'Shor', image: '/placeholder.svg', type: 'playlist' },
-    { id: 2, title: 'Liked Songs', image: '/placeholder.svg', type: 'playlist', gradient: true },
-    { id: 3, title: 'Escape', image: '/placeholder.svg', type: 'playlist' },
-    { id: 4, title: 'Seedhe Maut', image: '/placeholder.svg', type: 'artist' },
-    { id: 5, title: 'Neshar Bojha', image: '/placeholder.svg', type: 'playlist' },
-    { id: 6, title: 'Supreme', image: '/placeholder.svg', type: 'playlist' },
+    { id: 1, title: 'Liked Songs', image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300', type: 'playlist', gradient: true },
+    { id: 2, title: 'Daily Mix 1', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300', type: 'playlist' },
+    { id: 3, title: 'Discover Weekly', image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300', type: 'playlist' },
+    { id: 4, title: 'Release Radar', image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=300', type: 'playlist' },
+    { id: 5, title: 'Your Top Songs 2023', image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300', type: 'playlist' },
+    { id: 6, title: 'Chill Hits', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300', type: 'playlist' },
   ];
 
   const madeForYou = [
@@ -29,35 +28,35 @@ const MainContent = ({ setCurrentSong, setIsPlaying }: MainContentProps) => {
       id: 1, 
       title: 'Daily Mix 1', 
       artist: 'Pritam, Atif Aslam, Vishal-Shekhar and more', 
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300',
       color: 'bg-blue-500'
     },
     { 
       id: 2, 
       title: 'Daily Mix 2', 
       artist: 'Anupam Roy, Zubeen Garg, Kunal...', 
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=300',
       color: 'bg-purple-500'
     },
     { 
       id: 3, 
       title: 'Daily Mix 3', 
       artist: 'Afsiq, Bayaan, Young Stunners and more', 
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1500673922987-e212871fec22?w=300',
       color: 'bg-red-500'
     },
     { 
       id: 4, 
       title: 'Daily Mix 4', 
       artist: 'Arijit Singh, Siddhu Kumar, Sachin-Jigar...', 
-      image: '/placeholder.svg',
+      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=300',
       color: 'bg-orange-500'
     },
   ];
 
   const jumpBackIn = [
-    { id: 1, title: 'Afsanay', artist: 'Album', image: '/placeholder.svg' },
-    { id: 2, title: 'Sirf Gang Talk Chale', artist: 'Playlist', image: '/placeholder.svg' },
+    { id: 1, title: 'Afsanay', artist: 'Album', image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300' },
+    { id: 2, title: 'Sirf Gang Talk Chale', artist: 'Playlist', image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=300' },
   ];
 
   const handlePlaySong = (song: any) => {
@@ -126,14 +125,11 @@ const MainContent = ({ setCurrentSong, setIsPlaying }: MainContentProps) => {
                 className="bg-gray-900 bg-opacity-40 p-4 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer group"
               >
                 <div className="relative mb-4">
-                  <div className={`w-full aspect-square ${mix.color} rounded-lg flex items-center justify-center relative overflow-hidden`}>
-                    <span className="text-white font-bold text-lg">
-                      {mix.title.includes('1') ? '01' : mix.title.includes('2') ? '02' : mix.title.includes('3') ? '03' : '04'}
-                    </span>
-                    <div className="absolute top-2 left-2 bg-blue-400 text-black text-xs px-2 py-1 rounded font-bold">
-                      Daily Mix
-                    </div>
-                  </div>
+                  <img 
+                    src={mix.image} 
+                    alt={mix.title}
+                    className="w-full aspect-square object-cover rounded-lg"
+                  />
                   <button 
                     onClick={() => handlePlaySong(mix)}
                     className="absolute bottom-2 right-2 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-green-400 hover:scale-105 transition-all transform translate-y-2 group-hover:translate-y-0"
