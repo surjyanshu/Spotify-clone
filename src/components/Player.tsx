@@ -1,5 +1,5 @@
 
-import { Play, Pause, SkipBack, SkipForward, Shuffle, Repeat, Volume2 } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Shuffle, Repeat, Volume2, Heart } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
 interface PlayerProps {
